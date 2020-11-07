@@ -1,8 +1,5 @@
 package com.app.server.handler;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-
 import com.app.models.ClipServices;
 import com.app.pojo.Users;
 import com.app.session.redis.SessionStore;
@@ -23,9 +20,8 @@ public class DetailShipmentsHandler implements Handler<RoutingContext>, SessionS
 			try {
 				Gson gson = new Gson();
 				HttpServerRequest httpServerRequest = routingContext.request();
-				DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				String sessionId = httpServerRequest.getParam("sessionId");
-				Users loggedInUser = gson.fromJson(jedis.get(sessionId), Users.class);
+				Users loggedInUser2 = gson.fromJson(jedis.get(sessionId), Users.class);
 				JsonObject data = new JsonObject();
 
 				routingContext.put(AppParams.RESPONSE_DATA, data);
