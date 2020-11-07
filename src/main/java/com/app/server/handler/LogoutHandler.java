@@ -27,7 +27,9 @@ public class LogoutHandler implements Handler<RoutingContext>, SessionStore {
 			try {
 				
 				//COMMENT
-				int duc =5;
+				int dung =5;
+				
+				//COMMENT
 				Gson gson = new Gson();
 				Session session = routingContext.session();
 				System.out.println("session id from LoginHandler: " + session.id());
