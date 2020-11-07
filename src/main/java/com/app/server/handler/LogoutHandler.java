@@ -25,6 +25,9 @@ public class LogoutHandler implements Handler<RoutingContext>, SessionStore {
 
 		routingContext.vertx().executeBlocking(future -> {
 			try {
+				
+				//COMMENT
+				int duc =5;
 				Gson gson = new Gson();
 				Session session = routingContext.session();
 				System.out.println("session id from LoginHandler: " + session.id());
