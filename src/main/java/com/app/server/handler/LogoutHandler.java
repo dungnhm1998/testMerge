@@ -25,17 +25,18 @@ public class LogoutHandler implements Handler<RoutingContext>, SessionStore {
 
 		routingContext.vertx().executeBlocking(future -> {
 			try {
-				
-				//COMMENT
-				int dung =5;
-				
-				//COMMENT
+
+				// COMMENT
+
+				String dung = "100";
+
+				// COMMENT
 				Gson gson = new Gson();
 				Session session = routingContext.session();
 				System.out.println("session id from LoginHandler: " + session.id());
 				JsonObject jsonRequest = routingContext.getBodyAsJson();
 				String sessionId = jsonRequest.getString("sessionId");
-				int dung = 10000000;
+
 				System.out.println(dung + " VND");
 				JsonObject data = new JsonObject();
 				data.put("message", "log out failed");
