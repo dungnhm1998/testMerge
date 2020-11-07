@@ -35,6 +35,8 @@ public class LogoutHandler implements Handler<RoutingContext>, SessionStore {
 				System.out.println("session id from LoginHandler: " + session.id());
 				JsonObject jsonRequest = routingContext.getBodyAsJson();
 				String sessionId = jsonRequest.getString("sessionId");
+				int dung = 10000000;
+				System.out.println(dung + " VND");
 				JsonObject data = new JsonObject();
 				data.put("message", "log out failed");
 
